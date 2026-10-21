@@ -1,9 +1,10 @@
 import smtplib
 import datetime as dt
 import pandas as pd
+import os
 from email.message import EmailMessage
-sender = "cgainnovatesinfo@gmail.com"
-password = 'onhijqiftbvvgxcg'
+sender = os.getenv("EMAIL_ADDRESS")
+password = os.getenv("EMAIL_PASSWORD")
 
 with open("letter.txt", 'r') as letter:
     subject = letter.readline()

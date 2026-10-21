@@ -25,4 +25,8 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run Python Script
-        run: python 'Birthday wisher/app.py'
+        env:
+          EMAIL_ADDRESS: ${{secrets.EMAIL_ADDRESS}}
+          EMAIL_PASSWORD: ${{secrets.EMAIL_PASSWORD}}
+        run: python app.py
+
